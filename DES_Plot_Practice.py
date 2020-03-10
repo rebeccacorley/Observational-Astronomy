@@ -13,13 +13,15 @@ import matplotlib.pyplot as plt
 
 data = np.genfromtxt('/Users/rebeccacorley/Documents/Observational Astro/DES-Data1.txt')
 print(data)
+
+redshift = data[:,4] #columns sart at 0!!
 log_dist = data[:,2] #however many columns I want, the colon indicates all 
-redshift = data[:,4] #columns sart at 0!! 
+ 
 
 #The following lines play around with different graph properties
-plt.plot(log_dist, redshift, '.', ms = 5, color = 'k', label = 'redshift data')
-plt.xlabel('log(d)')
-plt.ylabel('Z') 
+plt.plot(redshift, log_dist, '.', ms = 5, color = 'k', label = 'redshift data')
+plt.xlabel('Z')
+plt.ylabel('log(d)') 
 plt.legend()
 plt.show()
 
